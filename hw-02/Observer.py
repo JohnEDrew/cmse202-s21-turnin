@@ -21,9 +21,7 @@ class Observer():
         
     def load_images(self,im1_filename,im2_filename):
         '''
-        This function is incomplete! It is missing the appropriate input vales
-        and the "pass" should be replaced with the appropriate code.
-        Update this docstring to explain what the function does (or should do).
+        This function reads in the header and data of two file and assigns them to to respective attributes.
         '''
         self.im1_header = fits.open(im1_filename)
         self.im1_data = fits.getdata(im1_filename)
@@ -31,6 +29,8 @@ class Observer():
         self.im2_data = fits.getdata(im2_filename)
         
     def calc_stats(self):
+        ''' This function calculates and prints the mean and standard deviation for both image files.
+        '''
         print('Mean of im1: ', np.mean(self.im1_data))  
         print('Std of im1: ', np.std(self.im1_data))
         print('Mean of im2: ', np.mean(self.im2_data))
@@ -42,7 +42,7 @@ class Observer():
         This function is incomplete! Make sure to finish it and
         then update this docstring to explain what the function does!
         '''
-        pass
+        
         # Define the array for storing RGB values
         rgb = np.zeros((self.im1_data.shape[0],self.im1_data.shape[1],3))
         
